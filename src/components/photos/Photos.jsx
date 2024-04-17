@@ -4,9 +4,9 @@ function Photos() {
   return (
     <>
       {
-        photos.map((photo) => {
+        photos.map((photo) => (
           <img src={`/photos/${photo.src}`} alt="image not found" />
-        })
+        ))
       }
     </>
   )

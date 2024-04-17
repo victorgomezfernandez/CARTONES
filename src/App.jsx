@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
-import Photos from "./components/photos/Photos";
-
-
+import Locations from "./pages/locations/Locations";
 
 function App() {
 
@@ -12,11 +10,11 @@ function App() {
       <Routes>
       <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/locations" element={<Locations />} />
         <Route path="*" element={<Home/>} />
-        <Route path="/photos" element={<Photos />} />
       </Routes>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;
