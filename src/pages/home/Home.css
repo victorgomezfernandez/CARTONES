@@ -1,5 +1,5 @@
 .home-principal {
-    min-height: 100vh;
+    height: 100vh;
     overflow-y: scroll;
     background: url('/images/background.jpg') no-repeat;
     background-size: cover;

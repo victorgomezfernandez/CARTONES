@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
+import Photos from "./components/photos/Photos";
 
 
 
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="*" element={<Home/>} />
+        <Route path="/photos" element={<Photos />} />
       </Routes>
     </BrowserRouter>
   )

@@ -23,9 +23,43 @@
   color: white;
 }
 
+.header-dark nav a{
+  color: white;
+}
+
+.header-dark nav a::before{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.header-dark .header-logo .header-logoblack{
+  visibility: hidden;
+}
+
+.header-dark .header-logo .header-logowhite{
+  visibility: visible;
+}
+
 .header-logo img {
   height: 12%;
   width: 12%;
+  position: relative;
+}
+
+.header-logoblack{
+  position: absolute;
+}
+
+.header-logowhite{
+  left: 0;
+  top: 0;
+  visibility: hidden;
 }
 
 .header-navbar a {
