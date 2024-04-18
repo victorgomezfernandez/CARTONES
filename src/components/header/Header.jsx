@@ -8,8 +8,7 @@ function Header({ scrollOn }) {
         <a href="/home" className="header-logowhite"><img src="/images/logowhite.png" alt="image not found" /></a>
       </div>
       <nav className="header-navbar" >
-        <a href="/buy">Buy</a>
-        <a href="/sell">Sell</a>
+        <a href="/news">News</a>
         <a href="/locations">Locations</a>
       </nav>
     </div>

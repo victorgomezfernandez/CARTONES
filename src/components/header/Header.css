@@ -68,7 +68,7 @@
   color: black;
   font-weight: 500;
   text-decoration: none;
-  margin-left: 40px
+  margin-left: 40px;
 }
 
 .header-navbar a::before {
