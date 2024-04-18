@@ -13,7 +13,7 @@ function News() {
   }
 
   useEffect(() => {
-    document.title = 'CARTONES | Home';
+    document.title = 'CARTONES | News';
     const favicon = document.querySelector('link[rel="icon"]');
     if (favicon) {
       favicon.href = 'images/onlylogowhite.png'
