@@ -1,4 +1,4 @@
- CARTONES
+# CARTONES
 
 CARTONES EL ENCUENTRO is a React project, with the objective of a functional meeting point for Magic The Gathering Players
 
