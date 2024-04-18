@@ -14,8 +14,12 @@ function Locations() {
   }
 
   useEffect(() => {
-    document.title= 'CARTONES | Locations';
-  },[]);
+    document.title = 'CARTONES | Home';
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon) {
+      favicon.href = 'images/onlylogowhite.png'
+    }
+  }, []);
 
   return (
     <>

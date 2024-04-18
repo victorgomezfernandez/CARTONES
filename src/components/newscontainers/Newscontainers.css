@@ -8,8 +8,8 @@
 }
 
 .card-container {
-    background-color: #bbbbbb;
-    color: black;
+    background-color: black;
+    color: white;
     border-radius: 20px;
 }
 
@@ -24,7 +24,7 @@
 
 .card-image {
     display: flex;
-    background-color: #bbbbbb;
+    background-color: black;
     justify-content: center;
     align-items: center;
 }
@@ -55,10 +55,10 @@
 }
 
 .card-button {
-    margin: 10px auto 0px;
+    margin: 10px auto 15px;
     background-color: white;
     border-radius: 20px;
-    padding: 5px;
+    padding: 10px;
 }
 
 .card-button a{
@@ -94,4 +94,16 @@
 
 .slick-next:before{
     color: black !important;
+}
+
+.card-image img{
+    width: 100%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card-image img:hover{
+    transform: scale(0.95);
+    border-radius: 20px;
+    box-shadow: 0 32px 7px rgba(68);
 }
