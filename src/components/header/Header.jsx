@@ -3,10 +3,12 @@ import "./Header.css"
 function Header({ scrollOn }) {
   return (
     <div className={`header-wrapper ${scrollOn ? "header-dark" : ""}`}>
-      <a href="/home" className="header-logo"><img src="/images/logoblack.png" alt="image not found" /></a>
-      <nav className="header-navbar">
-        <a href="/buy">Buy</a>
-        <a href="/sell">Sell</a>
+      <div className="header-logo">
+        <a href="/home" className="header-logoblack"><img src="/images/logoblack.png" alt="image not found" /></a>
+        <a href="/home" className="header-logowhite"><img src="/images/logowhite.png" alt="image not found" /></a>
+      </div>
+      <nav className="header-navbar" >
+        <a href="/news">News</a>
         <a href="/locations">Locations</a>
       </nav>
     </div>

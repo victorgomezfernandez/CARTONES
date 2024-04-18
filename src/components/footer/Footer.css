@@ -94,3 +94,14 @@
 .footer-logo {
   width: 90%;
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .footer-col h4{
+    font-size: 13px;
+  }
+
+  .footer-col ul li{
+    font-size: 10px;
+  }
+}

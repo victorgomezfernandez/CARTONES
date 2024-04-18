@@ -1,4 +1,4 @@
-.home-principal {
+.locations-principal {
     height: 100vh;
     overflow-y: scroll;
     background: url('/images/background.jpg') no-repeat;
@@ -6,11 +6,17 @@
     background-position: center;
 }
 
-.home-content {
+.locations-text{
     margin: 100px 60px 50px;
 }
 
-.home-content a{
-    color: black;
+.locations-content {
+    margin-top: 5em;
+    margin-left: 2em;
 }
 
+.locations-map-container{
+    margin: 1rem auto;
+    width: 90vw;
+    height: 100vh;
+}
