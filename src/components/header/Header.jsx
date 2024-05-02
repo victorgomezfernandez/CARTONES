@@ -1,3 +1,4 @@
+import Sidebar from "../sidebar/Sidebar";
 import "./Header.css"
 
 function Header({ scrollOn }) {
@@ -10,8 +11,11 @@ function Header({ scrollOn }) {
       <nav className="header-navbar" >
         <a href="/news">News</a>
         <a href="/locations">Locations</a>
+        <a href="/cards">Cards</a>
+        {/* <Sidebar /> */}
       </nav>
     </div>
   )
 }
+
 export default Header;
