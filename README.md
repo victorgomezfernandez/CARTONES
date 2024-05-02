@@ -2,6 +2,8 @@
 
 CARTONES EL ENCUENTRO is a React project, with the objective of a functional meeting point for Magic The Gathering Players
 
+# TASK 1
+
 ## COMPONENTS
 
 This project is composed of the next components that will be used all across the web:
@@ -63,11 +65,107 @@ import { faXTwitter, faInstagram, faWizardsOfTheCoast, faGithub } from '@fortawe
 The project is composed of three main pages:
 - Home, the default page of the project with some information and images
 - News, the page containing the last news of Magic The Gathering, using the previous mentioned NEWSCONTAINERS component and NEWS.JS model
-- Locations, still in process, that will show the nearest play zones of Magic The Gathering
+- Locations will show the nearest play zones of Magic The Gathering
+
+
+# TASK 2
+
+## PLUGINS
+For this task the web page will connect to a Firebase database, that will store information about some Magic The Gathering cards, with characteristics like name, description or type, including an image stored locally in the project (as the Firebasae storage was producing problems). These data will be displayed in a "Cards" page. The next code was used to be able to get the data from the database, in the firebase.config.js file:
+
+```java
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+import { getDatabase } from "firebase/database";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCmrWiarJyftL9RZYAvYTyNJQTnsY81ppI",
+  authDomain: "cartones-62edd.firebaseapp.com",
+  databaseURL: "https://cartones-62edd-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "cartones-62edd",
+  storageBucket: "cartones-62edd.appspot.com",
+  messagingSenderId: "628907442821",
+  appId: "1:628907442821:web:14caf05e947a2ad94e5fec"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+export default db;
+```
+
+## PAGES
+
+This page includes only one new page, "Cards", that displays the information gotten from the database in an intuitive way. This page also includes a still-in-progress simple filter for these cards, filtering the type of the cards (creatures, lands, etc). The code to filter the cards is divided in the next parts:
+
+--------------------
+
+Getting the data from the database
+```javascript
+  const getAllCards = () => {
+    cardsService.getAllCards().then((items) => {
+      let auxCards = [];
+      items.forEach((item) => {
+        const key = item.key;
+        const data = item.val();
+        auxCards.push({
+          name: data.name,
+          type: data.type,
+          img: data.img,
+          deck: data.deck
+        })
+      })
+      setCards([...auxCards])
+    })
+  }
+
+  useEffect(() => {
+    getAllCards();
+  }, [])
+```
+
+--------------------
+Defining the elements used later
+```java
+const [cardType, setCardType] = useState("Creature");
+```
+-------------------
+Getting the elements from the database and filtering by the type, displaying the needed data
+```java
+          {
+            cards.map((c) => (
+              <>
+                {c.type == cardType ?
+                  <div className="cards-container">
+                    <div className="cards-image-container">
+                      <div className="cards-image">
+                        <img src={`/cards-images/${c.img}`} alt="image not found" />
+                      </div>
+                    </div>
+                    <div className="cards-text">
+                      <p>Name: {c.name}</p>
+                      <p>Deck: {c.deck}</p>
+                    </div>
+                  </div>
+                  :
+                  ""}
+              </>
+            ))
+          }
+```
+
+### Failed attemps
+
+One part of this task was making a dropdown menu for the page in phone-sized screens, but it has not been possible to include this section in the page (the fundations are in the repository)
 
 ## INSPIRATION
 
 I have used the next [page](https://www.figma.com/community/file/891374608655348853) as a shallow inspiration for the creation of the page
+
 
 ## Authors
 - Víctor Gómez
