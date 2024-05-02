@@ -4,7 +4,6 @@ import Header from "../../components/header/Header";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
 import "leaflet/dist/leaflet.css"
 import "./Locations.css";
-import Photos from "../../components/photos/Photos";
 
 function Locations() {
   
