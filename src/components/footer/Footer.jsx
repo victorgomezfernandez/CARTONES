@@ -25,6 +25,7 @@ function Footer() {
             <ul className="footer-ul">
               <li className="footer-content"><a href="/news">News</a></li>
               <li className="footer-content"><a href="/locations">Locations</a></li>
+              <li className="footer-content"><a href="/cards">Cards</a></li>
               <li className="footer-content"><a href="#">Shipping policies</a></li>
             </ul>
           </div>
