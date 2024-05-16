@@ -1,0 +1,14 @@
+.rss-principal {
+    height: 70vh;
+    overflow-y: scroll;
+    background: url('/images/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.rss-content {
+    padding: 200px;
+    justify-content: center;
+    text-align: center;
+    margin: 100px 60px 50px;
+}

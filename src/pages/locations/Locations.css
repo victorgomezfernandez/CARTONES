@@ -1,0 +1,23 @@
+.locations-principal {
+    height: 100vh;
+    overflow-y: scroll;
+    background: url('/images/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.locations-text{
+    margin: 100px 60px 50px;
+}
+
+.locations-content {
+    margin-top: 5em;
+    margin-left: 2em;
+}
+
+.locations-map-container{
+    margin: 1rem auto;
+    width: 90vw;
+    height: 90vh;
+    z-index: 0;
+}

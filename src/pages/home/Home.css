@@ -1,0 +1,17 @@
+.home-principal {
+    height: 100vh;
+    overflow-y: scroll;
+    background: url('/images/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home-content {
+    
+    margin: 100px 60px 50px;
+}
+
+.home-content a{
+    color: black;
+}
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0">
+
+  <channel>
+    <title>CARTONES News Page</title>
+    <link>https://cartones-9f0dc.web.app/cartones/news</link>
+    <description>News from the Magic the Gathering multiverse</description>
+    <item>
+      <title>Outlaws of Thunder Junction</title>
+      <link>https://cartones-9f0dc.web.app/news/outlaws_of_thunder_junction</link>
+      <description>Outlaws of Thunder Junction out tomorrow</description>
+    </item>
+    <item>
+      <title>Bloomburrow</title>
+      <link>https://cartones-9f0dc.web.app/news/bloomburrow</link>
+      <description>Bloomburrow release date confirmed</description>
+    </item>
+    <item>
+      <title>Modern Horizons III</title>
+      <link>https://cartones-9f0dc.web.app/news/modern_horizons_3</link>
+      <description>Modern Horizons III available for pre-purchase</description>
+    </item>
+    <item>
+      <title>Tales of Middle Earth</title>
+      <link>https://cartones-9f0dc.web.app/news/tales_of_middle_earth</link>
+      <description>Magic The Gathering and Lord of the Rings new collaboration</description>
+    </item>
+  </channel>
+
+</rss>

@@ -1,0 +1,15 @@
+.news-principal {
+  height: 100vh;
+  overflow-y: scroll;
+  background: url('/images/background.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.news-content {
+  margin: 100px 60px 50px;
+}
+
+.news-cards{
+  margin-bottom: 150px;
+}
