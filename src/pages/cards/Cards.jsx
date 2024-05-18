@@ -1,6 +1,7 @@
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { useEffect, useRef, useState } from "react";
+import { v4 as uuidv4, v5 as uuidv5 } from "uuid";
 import "./Cards.css";
 import cardsService from "../../services/firebase/cards.service";
 import "./fullImg.js"
@@ -25,6 +26,10 @@ function Cards() {
   const [scrollOn, setScrollOn] = useState(false);
 
   const [cards, setCards] = useState([]);
+
+  const [image, setImage] = useState(null);
+
+  let imgName = uuidv4()+".png";
 
   const refForm = useRef();
 
@@ -65,11 +70,26 @@ function Cards() {
     e.preventDefault();
     const name = e.target.name.value;
     const type = e.target.type.value;
-    const img = e.target.img.value;
+    const img = imgName;
     const deck = e.target.deck.value;
     cardsService.addCard(name, type, img, deck).then((res) => {
       refForm.current.reset();
       setCards(oldValues => [...oldValues, { key: res.key, name, type, img, deck}])
+    })
+  }
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0])
+  }
+
+  const handleImageSubmit = (e) => {
+    e.preventDefault();
+    cardsService.uploadCardImage(image).then((response) => {
+      console.log("image uploaded");
+    })
+
+    cardsService.addCard(e).then((response) => {
+      console.log("card uploaded");
     })
   }
 
@@ -98,11 +118,11 @@ function Cards() {
           <h3>In this section you will see the MTG cards that you can obtein as rewards in our competitions</h3>
           <h3>Filter the card types you want to see</h3>
           <div className="cards-form-container">
-            <form id="cards-form" onSubmit={addCard} ref={refForm}>
+            <form id="cards-form" onSubmit={handleImageSubmit} ref={refForm}>
               <input className="cards-input" type="text" name="name" placeholder="Name"/>
               <input className="cards-input" type="text" name="type" placeholder="Type"/>
-              <input className="cards-input" type="text" name="img" placeholder="Image"/>
               <input className="cards-input" type="text" name="deck" placeholder="Deck"/>
+              <input type="file" onChange = {handleImageChange} className="cards-input" />
               <input className="cards-input" type="submit" value="Add Card"/>
             </form>
           </div>

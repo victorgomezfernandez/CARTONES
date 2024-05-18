@@ -3,12 +3,14 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getDatabase } from "firebase/database";
+import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDdhhSUaUndGu0VvmMcwZ0EzKceFqO6_54",
   authDomain: "cartones-9f0dc.firebaseapp.com",
   databaseURL : "https://cartones-9f0dc-default-rtdb.europe-west1.firebasedatabase.app/",
+  storageBucket: "gs://cartones-9f0dc.appspot.com/cards",
   projectId: "cartones-9f0dc",
   storageBucket: "cartones-9f0dc.appspot.com",
   messagingSenderId: "612356591495",
@@ -17,5 +19,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const storage = getStorage();
 
 export default db;

@@ -23,8 +23,15 @@ const removeCard = (key) => {
 	return remove(dbRefCard);
 };
 
+const uploadCardImage = (image) => {
+	console.log(image);
+	const myStorageRef = storageRef(firebaseService.storage, `cards/${image}`);
+	return uploadBytes(myStorageRef, image);
+}
+
 export default {
 	getAllCards,
 	addCard,
 	removeCard,
+	uploadCardImage
 }
