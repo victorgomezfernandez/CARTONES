@@ -332,6 +332,7 @@ To achieve this part I created some pages with details from the news.js file use
 
 The project had to be uploaded to Firebase Hosting ([app link](https://cartones-9f0dc.web.app))in order to be able to get the different news. The file can be found in the footer of the page, and linking it to a RSS reader will result in something like this:
 
+<img width="1920" alt="feedly" src="https://github.com/victorgomezfernandez/CARTONES/assets/145705464/c9cd2e28-23d2-4c77-a602-d3fe3f5ffc33">
 
 
 ### Failed attemps
