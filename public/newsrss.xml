@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0">
+
+  <channel>
+    <title>CARTONES News Page</title>
+    <link>https://cartones-9f0dc.web.app/cartones/news</link>
+    <description>News from the Magic the Gathering multiverse</description>
+    <pubDate>Fri, 17 May 2024 10:30:00 +0000</pubDate>
+    <item>
+      <title>Outlaws of Thunder Junction</title>
+      <link>https://cartones-9f0dc.web.app/news/1</link>
+      <description>Outlaws of Thunder Junction out tomorrow</description>
+      <pubDate>Fri, 17 May 2024 10:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Lost Caverns of Ixalan</title>
+      <link>https://cartones-9f0dc.web.app/news/2</link>
+      <description>The Lost Caverns of Ixalan already avaliable</description>
+      <pubDate>Fri, 17 May 2024 10:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Bloomburrow</title>
+      <link>https://cartones-9f0dc.web.app/news/3</link>
+      <description>Bloomburrow release date confirmed</description>
+      <pubDate>Fri, 17 May 2024 10:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Modern Horizons III</title>
+      <link>https://cartones-9f0dc.web.app/news/4</link>
+      <description>Modern Horizons III available for pre-purchase</description>
+      <pubDate>Fri, 17 May 2024 10:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tales of Middle Earth</title>
+      <link>https://cartones-9f0dc.web.app/news/5</link>
+      <description>Magic The Gathering and Lord of the Rings new collaboration</description>
+      <pubDate>Fri, 17 May 2024 10:30:00 +0000</pubDate>
+    </item>
+  </channel>
+
+</rss>

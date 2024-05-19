@@ -25,14 +25,14 @@ function Newscontainers() {
               <div className="card-container">
                 <div className="card-preview">
                   <div className="card-image">
-                    <a href={n.link}><img src={n.preview} alt="image not found" /></a>
+                    <a href={`/news/${n.key}`}><img src={n.preview} alt="image not found" /></a>
                   </div>
                 </div>
                 <div className="card-text">
                   <p className="card-title">{n.title}</p>
                   <p className="card-content">{n.content}</p>
                   <div className="card-button">
-                    <a href={n.link}>Read More!</a>
+                    <a href={`/news/${n.key}`}>Read More!</a>
                   </div>
                 </div>
               </div>
@@ -42,6 +42,7 @@ function Newscontainers() {
       </div>
     </div>
   )
+
 }
 
 export default Newscontainers;

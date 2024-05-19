@@ -40,7 +40,7 @@ function Footer() {
           <div className="footer-col">
             <h4>IMPORTANT INFO</h4>
             <ul className="footer-ul">
-              <li><a href="/privacy">Privacy Notice</a></li>
+              <li><a href="/newsrss.xml">RSS</a></li>
               <li><FontAwesomeIcon icon={faCopyright} /> 2024 CARTONES All Rights Reserved</li>
               <li><b>Check the Github</b></li>
               <div className="footer-socials">

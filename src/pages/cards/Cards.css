@@ -6,7 +6,34 @@
     background-position: center;
 }
 
-.cards-form {
+.cards-form-container {
+    margin: 20px;
+    width: 75vw;
+    border: solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#cards-form>input[type="submit"] {
+    background-color: #bbb;
+    color: black;
+
+}
+
+.cards-input {
+    padding: 10px;
+    border-radius: 20px;
+    border: solid #bbb;
+    margin-right: 10px;
+    font-weight: bolder;
+    transition: 0.3s;
+}
+
+.cards-input:hover {
+    border: solid black;
+}
+
+.cards-filter {
     margin-top: 15px;
     font-size: 20px;
 }
@@ -19,6 +46,8 @@
     background-color: #bbb;
     color: black;
     border-radius: 20px;
+    border: solid black;
+    padding: 10px;
 }
 
 .cards-content {
@@ -69,4 +98,43 @@
     padding: 5px;
     font-size: large;
     font-weight: bold;
+}
+
+.cards-full{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.cards-full img{
+    width: 90%;
+    max-width: 500px;
+}
+
+.cards-full span {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.cards-delete-icon {
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: large;
+}
+
+.cards-delete-icon:hover{
+    color: red;
+    font-size: medium;
 }
