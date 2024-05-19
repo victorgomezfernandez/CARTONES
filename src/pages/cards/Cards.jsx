@@ -105,7 +105,7 @@ function Cards() {
   const removeCard = (key) => {
     cardsService.removeCard(key).then(() => {
       getAllCards();
-      console.log("registro eliminado");
+      console.log("card removed");
     });
   };
 

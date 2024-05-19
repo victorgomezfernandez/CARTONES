@@ -26,7 +26,6 @@ const removeCard = (key) => {
 const uploadCardImage = (image, imgName) => {
   console.log(image);
   const myStorageRef = storageRef(firebaseService.storage, imgName);
-  console.log("hay referencia de imagen")
   return uploadBytes(myStorageRef, image);
 }
 
