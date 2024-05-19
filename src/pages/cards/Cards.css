@@ -7,6 +7,7 @@
 }
 
 .cards-form-container {
+    margin: 20px;
     width: 75vw;
     border: solid black;
     border-radius: 20px;
@@ -130,7 +131,7 @@
     margin-top: 10px;
     cursor: pointer;
     transition: 0.2s;
-    font-size: larger;
+    font-size: large;
 }
 
 .cards-delete-icon:hover{

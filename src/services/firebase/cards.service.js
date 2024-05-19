@@ -1,8 +1,6 @@
 import { push, remove, get, ref } from "firebase/database";
 import firebaseService from "./firebase.config.js";
 import { getDownloadURL, uploadBytes, ref as storageRef } from "firebase/storage"
-import db from "./firebase.config.js";
-
 
 const refCards = ref(firebaseService.db, "/cards");
 
@@ -20,9 +18,10 @@ const addCard = (name, type, img, deck) => {
 };
 
 const removeCard = (key) => {
-	const dbRefCard = (db, `/cards/${key}`);
+	const dbRefCard = ref(firebaseService.db, `/cards/${key}`);
 	return remove(dbRefCard);
 };
+
 
 const uploadCardImage = (image, imgName) => {
   console.log(image);

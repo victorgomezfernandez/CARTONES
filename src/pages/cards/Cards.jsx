@@ -57,6 +57,7 @@ function Cards() {
         const key = item.key;
         const data = item.val();
         auxCards.push({
+          key: key,
           name: data.name,
           type: data.type,
           img: data.img,
@@ -102,10 +103,12 @@ function Cards() {
 
 
   const removeCard = (key) => {
-    cardsService.removeCard(key).then((res) => {
+    cardsService.removeCard(key).then(() => {
       getAllCards();
+      console.log("registro eliminado");
     });
-  }
+  };
+
 
   useEffect(() => {
     getAllCards();
@@ -120,7 +123,7 @@ function Cards() {
           <h1>CARDS</h1>
           <br />
           <h3>In this section you will see the MTG cards that you can obtein as rewards in our competitions</h3>
-          <h3>Filter the card types you want to see</h3>
+          <h3>You can also submit your own cards with this form</h3>
           <div className="cards-form-container">
             <form id="cards-form" onSubmit={handleImageSubmit} ref={refForm}>
               <input className="cards-input" type="text" name="name" placeholder="Name" />
@@ -130,6 +133,7 @@ function Cards() {
               <input className="cards-input" type="submit" value="Add Card" />
             </form>
           </div>
+          <h3>Filter the card types you want to see</h3>
           <form className="cards-filter">
             <select value={cardType} onChange={changeCardTypeValue}>
               <option value="Creature">Creature</option>
@@ -158,7 +162,7 @@ function Cards() {
                       <p>Name: {c.name}</p>
                       <p>Deck: {c.deck}</p>
                       <div className="cards-delete-icon">
-                        <FontAwesomeIcon icon={faTrash} onClick={() => removeCard(c.key)}/>
+                        <FontAwesomeIcon icon={faTrash} onClick={() => removeCard(c.key)} />
                       </div>
                     </div>
                   </div>
