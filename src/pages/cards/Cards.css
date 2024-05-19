@@ -125,3 +125,15 @@
     color: white;
     cursor: pointer;
 }
+
+.cards-delete-icon {
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: larger;
+}
+
+.cards-delete-icon:hover{
+    color: red;
+    font-size: medium;
+}

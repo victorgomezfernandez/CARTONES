@@ -3,7 +3,8 @@ import firebaseService from "./firebase.config.js";
 import { getDownloadURL, uploadBytes, ref as storageRef } from "firebase/storage"
 import db from "./firebase.config.js";
 
-const refCards = ref(db, "/cards");
+
+const refCards = ref(firebaseService.db, "/cards");
 
 const getAllCards = () => {
 	return get(refCards);
@@ -23,15 +24,22 @@ const removeCard = (key) => {
 	return remove(dbRefCard);
 };
 
-const uploadCardImage = (image) => {
-	console.log(image);
-	const myStorageRef = storageRef(firebaseService.storage, `cards/${image}`);
-	return uploadBytes(myStorageRef, image);
+const uploadCardImage = (image, imgName) => {
+  console.log(image);
+  const myStorageRef = storageRef(firebaseService.storage, imgName);
+  console.log("hay referencia de imagen")
+  return uploadBytes(myStorageRef, image);
+}
+
+
+const getCardImage = (snapshotUrl) => {
+	return getDownloadURL(snapshotUrl);
 }
 
 export default {
 	getAllCards,
 	addCard,
 	removeCard,
-	uploadCardImage
+	uploadCardImage,
+	getCardImage
 }

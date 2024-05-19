@@ -1,24 +1,25 @@
-// Import the functions you need from the SDKs you need
+// firebase.config.js
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 import { getDatabase } from "firebase/database";
 import { getStorage } from "firebase/storage";
 
-// Your web app's Firebase configuration
+// Tu configuración de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyDdhhSUaUndGu0VvmMcwZ0EzKceFqO6_54",
   authDomain: "cartones-9f0dc.firebaseapp.com",
-  databaseURL : "https://cartones-9f0dc-default-rtdb.europe-west1.firebasedatabase.app/",
-  storageBucket: "gs://cartones-9f0dc.appspot.com/cards",
-  projectId: "cartones-9f0dc",
+  databaseURL: "https://cartones-9f0dc-default-rtdb.europe-west1.firebasedatabase.app/",
   storageBucket: "cartones-9f0dc.appspot.com",
+  projectId: "cartones-9f0dc",
   messagingSenderId: "612356591495",
   appId: "1:612356591495:web:f3b646f876e543ea4e0d22"
 };
 
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const storage = getStorage();
 
-export default db;
+export default {
+  db,
+  storage,
+};

@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4, v5 as uuidv5 } from "uuid";
 import "./Cards.css";
 import cardsService from "../../services/firebase/cards.service";
-import "./fullImg.js"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Cards() {
 
@@ -29,7 +30,7 @@ function Cards() {
 
   const [image, setImage] = useState(null);
 
-  let imgName = uuidv4()+".png";
+  let imgName = uuidv4();
 
   const refForm = useRef();
 
@@ -74,7 +75,7 @@ function Cards() {
     const deck = e.target.deck.value;
     cardsService.addCard(name, type, img, deck).then((res) => {
       refForm.current.reset();
-      setCards(oldValues => [...oldValues, { key: res.key, name, type, img, deck}])
+      setCards(oldValues => [...oldValues, { key: res.key, name, type, img, deck }])
     })
   }
 
@@ -84,14 +85,21 @@ function Cards() {
 
   const handleImageSubmit = (e) => {
     e.preventDefault();
-    cardsService.uploadCardImage(image).then((response) => {
+    const imgName = uuidv4();
+    cardsService.uploadCardImage(image, imgName).then((response) => {
       console.log("image uploaded");
-    })
-
-    cardsService.addCard(e).then((response) => {
-      console.log("card uploaded");
+      cardsService.getCardImage(response.ref).then(res => {
+        const name = e.target.name.value
+        const type = e.target.type.value
+        const img = res
+        const deck = e.target.deck.value
+        cardsService.addCard(name, type, img, deck).then((response) => {
+          console.log("card uploaded");
+        })
+      })
     })
   }
+
 
   const removeCard = (key) => {
     cardsService.removeCard(key).then((res) => {
@@ -106,10 +114,6 @@ function Cards() {
   return (
     <>
       <Header scrollOn={scrollOn} />
-      {/* <div className="cards-full" id="fullImgContainer">
-        <img src="" alt="image not found" id="fullImg" />
-        <span onClick={closeFullImg()}><FontAwesomeIcon icon={faX} /></span>
-      </div> */}
       <div className="cards-principal" onScroll={changedScrollY}>
         <div className="cards-title">
           <br />
@@ -119,11 +123,11 @@ function Cards() {
           <h3>Filter the card types you want to see</h3>
           <div className="cards-form-container">
             <form id="cards-form" onSubmit={handleImageSubmit} ref={refForm}>
-              <input className="cards-input" type="text" name="name" placeholder="Name"/>
-              <input className="cards-input" type="text" name="type" placeholder="Type"/>
-              <input className="cards-input" type="text" name="deck" placeholder="Deck"/>
-              <input type="file" onChange = {handleImageChange} className="cards-input" />
-              <input className="cards-input" type="submit" value="Add Card"/>
+              <input className="cards-input" type="text" name="name" placeholder="Name" />
+              <input className="cards-input" type="text" name="type" placeholder="Type" />
+              <input className="cards-input" type="text" name="deck" placeholder="Deck" />
+              <input type="file" onChange={handleImageChange} className="cards-input" />
+              <input className="cards-input" type="submit" value="Add Card" />
             </form>
           </div>
           <form className="cards-filter">
@@ -147,12 +151,15 @@ function Cards() {
                   <div className="cards-container">
                     <div className="cards-image-container">
                       <div className="cards-image">
-                        <img src={`/cards-images/${c.img}`} alt="image not found" /*onClick={openFullImg(`/cards-images/${c.img}`)} *//>
+                        <img src={c.img} alt="image not found" />
                       </div>
                     </div>
                     <div className="cards-text">
                       <p>Name: {c.name}</p>
                       <p>Deck: {c.deck}</p>
+                      <div className="cards-delete-icon">
+                        <FontAwesomeIcon icon={faTrash} onClick={() => removeCard(c.key)}/>
+                      </div>
                     </div>
                   </div>
                   :
