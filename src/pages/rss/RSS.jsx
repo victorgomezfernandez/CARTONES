@@ -25,7 +25,7 @@ function RSS() {
         <div className="rss-content">
           <h1>Here you will find links to our RSS, to keep up with the news of CARTONES</h1>
           <br />
-          <a href="../../models/newsrss.xml"><h1>Link to our RSS news file</h1></a>
+          <a href="/newsrss.xml"><h1>Link to our RSS news file</h1></a>
         </div>
       </div>
       <Footer />
